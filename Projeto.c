@@ -1,28 +1,34 @@
 #include<stdio.h>
 #include<string.h>
 
-    void  preencherdados (char nome[][10], char sobrenome[][10]){
+    void  coletadedados (char nome[][40], char email[][20]){
         int i;
-        for ( i = 0; i < 1; i++)
+        for ( i = 0; i < 2; i++)
         {
-            printf("Digite seu nome: ");
-            fgets(nome, 10, stdin);
-            printf("Digite seu sobrenome: ");
-            fgets(sobrenome, 10, stdin);
+            printf("Informe o nome completo do %d usuario: ",i+1);
+            fgets(nome[i], 40, stdin);
+            system("cls");
+            
+            printf("Agora informe o email do %d usuraio ",i+1);
+            fgets(email[i],20,stdin);
+            system("cls");
+ 
+            
         }
         
     }
 
     int main()
     {
-        char nome[2][10],sobrenome[2][10];
+        char nome[2][40],email[2][20];
         int i;
         
-        preencherdados(nome, sobrenome);
+        coletadedados(nome,email);
         
-        for (i = 0; i < 1; i++)
+        for (i = 0; i < 2; i++)
         {
-            printf(" %s %s", nome[i], sobrenome[i]);
+            printf(" o %d uruario e  %s\n",i+1, nome[i]);
+            printf("o email do %d usuario e %s",i+1,email[i]);
         }
         
        
