@@ -1,37 +1,43 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
-    void  preencherdados (char nome[][10], char sobrenome[][10]){
-        int i;
-        for ( i = 0; i < 1; i++)
-        {
-            printf("Digite seu nome: ");
-            fgets(nome, 10, stdin);
-            printf("Digite seu sobrenome: ");
-            fgets(sobrenome, 10, stdin);
-        }
-        
-    }
+struct Endereco {
+    char rua[50];
+    int numero;
+    char bairro[30];
+    char cidade[30];
+    char estado[3];
+    char cep[10];
+};
 
-    int main()
-    {
-        char nome[2][10],sobrenome[2][10];
-        int i;
-        
-        preencherdados(nome, sobrenome);
-        
-        for (i = 0; i < 1; i++)
-        {
-            printf(" %s %s", nome[i], sobrenome[i]);
-        }
-        
-       
-            
-            
-            
-        
-        
-        
-        return 0;
-    }
+void coletarEndereco(struct Endereco *endereco) {
+    printf("Informe o endereço:\n");
+    printf("Rua: ");
+    scanf("%s", endereco->rua);
+    fflush(stdin);
+    printf("Número: ");
+    scanf("%d", &endereco->numero);
+    fflush(stdin);
+    printf("Bairro: ");
+    scanf("%s", endereco->bairro);
+    fflush(stdin);
+    printf("Cidade: ");
+    scanf("%s", endereco->cidade);
+    fflush(stdin);
+    printf("Estado: ");
+    scanf("%s", endereco->estado);
+    fflush(stdin);
+    printf("CEP: ");
+    scanf("%s", endereco->cep);
+    fflush(stdin);
+}
+
+int main() {
+    struct Endereco endereco;
+    coletarEndereco(&endereco);
     
+    printf("\nEndereço informado:\n");
+    printf("%s, %d - %s, %s - %s, %s\n", endereco.rua, endereco.numero, endereco.bairro, endereco.cidade, endereco.estado, endereco.cep);
+    
+    return 0;
+}
