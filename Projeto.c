@@ -33,18 +33,7 @@
         
     }
      
-            
-            
-     
-     double coletaltura(double altura[][1]){
-            int i;
-            for ( i = 0; i < 2; i++)
-            {   
-                printf("Informe a altura do usuario %d",i+1);
-                scanf("%lf",&altura[i]);
-            }
-           
-     }
+  
      int idaleatorio(int id[]){
         int i,idd;
         srand(time(NULL));
