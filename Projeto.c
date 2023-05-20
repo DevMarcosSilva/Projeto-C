@@ -3,6 +3,14 @@
 #include<time.h>
 #include<stdlib.h>
     
+    int inicio(int opcao[][2]){
+        int escolha;
+        
+        
+        
+        
+    }
+
     void  coletadedados ( int vacinacao[][1],char nome[][40], char email[][20], char sexo[][11], char endereco[][30], double altura[][1]){
             int i;
         for ( i = 0; i < 2; i++)
@@ -28,12 +36,23 @@
             printf("o usuario %d foi vacinado ? 1-Sim ou 2-Nao",i+1);
             scanf("%d",vacinacao[i]);
             printf("Informe a altura do usuario %d",i+1);
-                scanf("%lf",&altura[i]);
+                scanf("%lf",altura[i]);
         }
         
     }
      
-  
+            
+            
+     
+     double coletaltura(double altura[][1]){
+            int i;
+            for ( i = 0; i < 2; i++)
+            {   
+                printf("Informe a altura do usuario %d",i+1);
+                scanf("%lf",&altura[i]);
+            }
+           
+     }
      int idaleatorio(int id[]){
         int i,idd;
         srand(time(NULL));
