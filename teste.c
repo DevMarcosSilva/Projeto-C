@@ -234,16 +234,16 @@ int id[1000];
             for ( i = 0; i < size; i++)
             {
                 printf("usuario %d: ",i+1);
-                getchar();
-                printf("nome %s: ",i+1,nome[i] );
-                getchar();
-                printf("E-mail %s: ",i+1,email[i]);
-                getchar();
-                printf("Sexo %s: ",i+1,sexo[i]);
-                printf("Endereço %d: ",i+1,endereco[i]);
-                printf("Altura %d: ",i+1,altura[i]);
-                getchar();
-                printf("Vacina %s: ",i+1,vacinacao[i]);
+                
+                printf("nome %s: ",nome[i] );
+                
+                printf("E-mail %s: ",email[i]);
+                
+                printf("Sexo %s: ",sexo[i]);
+                printf("Endereço %d: ",endereco[i]);
+                printf("Altura %d: ",altura[i]);
+                
+                printf("Vacina %s: ",vacinacao[i]);
                 
 
             }
