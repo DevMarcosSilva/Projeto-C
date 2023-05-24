@@ -3,19 +3,20 @@
 #include<time.h>
 #include<stdlib.h>
 #include<locale.h>
-#define size 1   
+#define size 2   
 
 char email[1000][20];
 char nome[1000][50];
 char sexo[1000][11];
-double altura[50];
+double altura[1000];
 char vacinacao[1000][11];
 char endereco [1000][50];
-int id[][8];
+int id[1000];
 
 
     void  coletadedados (){
             int i,idd;
+            float alturaaux;
             for ( i = 0; i < size; i++)
         {   fflush(stdin);
             printf("Informe o nome completo do %d usuario: ",i+1);
@@ -36,10 +37,9 @@ int id[][8];
            do
            {
             printf("Informe a altura do usuario %d",i+1);
-            scanf("%lf",&altura[i]);
-           } while (altura[i]<1 || altura[i]>2);
-           
-            
+            scanf("%f",&alturaaux);
+           } while (alturaaux<1 || alturaaux>2);
+            altura[i]=alturaaux;
         do
         {    fflush(stdin);
              printf("informe o sexo do %d usuario: Feminino Masculino ou Iindiferente ",i+1);
@@ -56,7 +56,7 @@ int id[][8];
         
              srand(time(NULL));
              idd=1000+rand()%5000;
-             id[i][i]=idd;
+             id[i]=idd;
              printf("o id do %d usuario e: %d\n\n",i+1,id[i]);
         }    
         }
@@ -68,7 +68,7 @@ int id[][8];
              char emailp[50];
         do
         {
-             printf("Digite 1 para buca pelo id ou qualquer valor para buspa por e-mail, ou 3 para sair; ");
+             printf("Digite 1 para busca pelo id ou qualquer valor para buscar por e-mail, ou 3 para sair; ");
              scanf("%d",&busuca);
                     
             switch (busuca)
@@ -93,7 +93,7 @@ int id[][8];
              for ( i = 0; i < size; i++)
              {  if (strcmp(email[i],emailp)==0)
                 {
-                 printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
+                 printf("\n nome:%s \n e-mail: %s\n Sexo: %s\n Endereco %s\n altura %.2lf\n vacina: %s\n",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
                 }else printf("erro");
              }
               break;
@@ -143,14 +143,14 @@ int id[][8];
         
            
            idd=1000+rand()%5000;
-           id[i][i]=idd;
+           id[i]=idd;
            printf("o id do %d usuario e: %d\n\n",i+1,id[i]);
             } while (strcmp(vacinacao[i], "Sim") !=0 && strcmp(vacinacao[i], "sim")!=0&& strcmp(vacinacao[i], "Nao")!=0&& strcmp(vacinacao[i], "nao")!=0);
         }
          
         }
 
-        void editarusuario(){
+        void editarusuario(char email[][20],char nome[][50]){
             
                 int i,busuca,iddd,op;
                 char emailp[50];
@@ -226,14 +226,29 @@ int id[][8];
             }
             
             } while (op ==1 && op==2);
-            
-            
-           
-            
-            
-            }
+}
                 
-        
+        void exibirusuarios(){
+            int i;
+
+            for ( i = 0; i < size; i++)
+            {
+                printf("usuario %d: ",i+1);
+                getchar();
+                printf("nome %s: ",i+1,nome[i] );
+                getchar();
+                printf("E-mail %s: ",i+1,email[i]);
+                getchar();
+                printf("Sexo %s: ",i+1,sexo[i]);
+                printf("Endereço %d: ",i+1,endereco[i]);
+                printf("Altura %d: ",i+1,altura[i]);
+                getchar();
+                printf("Vacina %s: ",i+1,vacinacao[i]);
+                
+
+            }
+            
+        }
     int main()
     {   setlocale(LC_ALL,"");
         char nome[5][40],email[5][50], sexo[5][11],endereco[5][30],BuscaEmail[2][50],busuca[2][50],vacinacao[5];
@@ -256,12 +271,15 @@ int id[][8];
                 
                 break;
             case 2: 
-                editarusuario();
+                editarusuario(nome,email);
                 break;
             case 6:
               backup();    
             case 4:
                 buscarusuario();
+                break;
+                case 5:
+                exibirusuarios();
                 break;
             default:
                 break;

@@ -3,7 +3,7 @@
 #include<time.h>
 #include<stdlib.h>
 #include<locale.h>
-#define size 1   
+   
 
 char email[1000][20];
 char nome[1000][50];
@@ -12,11 +12,12 @@ double altura[50];
 char vacinacao[1000][11];
 char endereco [1000][50];
 int id[][8];
+int user[];
 
 
     void  coletadedados (){
             int i,idd;
-            for ( i = 0; i < size; i++)
+            for ( i = 0; i < user; i++)
         {   fflush(stdin);
             printf("Informe o nome completo do %d usuario: ",i+1);
             fgets(nome[i], 50, stdin);
@@ -30,7 +31,7 @@ int id[][8];
         }while (strchr(email[i], '@') == 0);
             
             system("cls");
-            printf("Agora informe o endereÃ§o do usuÃ¡rio %d",i+1);
+            printf("Agora informe o endereço do usuário %d",i+1);
             fgets(endereco[i],30,stdin);
             fflush(stdin);
             printf("Informe a altura do usuario %d",i+1);
@@ -72,7 +73,7 @@ int id[][8];
                 printf("Digite o id :");
                 scanf("%d",&iddd);
              
-             for ( i = 0; i < size; i++)
+             for ( i = 0; i < user; i++)
              {  if (iddd==id[i])
                 { 
                 printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
@@ -85,7 +86,7 @@ int id[][8];
                 printf("Digite o E-mail:");
                 fgets(emailp,50,stdin);
              
-             for ( i = 0; i < size; i++)
+             for ( i = 0; i < user; i++)
              {  if (strcmp(email[i],emailp)==0)
                 {
                  printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
@@ -99,7 +100,7 @@ int id[][8];
         
         void backup(){
             int i,idd;
-        for ( i = 0; i < size; i++)
+        for ( i = 0; i < user; i++)
         {   fflush(stdin);
             printf("Informe o nome completo do %d usuario: ",i+1);
             fgets(nome[i], 50, stdin);
@@ -116,7 +117,7 @@ int id[][8];
             
             
             system("cls");
-            printf("Agora informe o endereÃƒÂ§o do usuraio %d",i+1);
+            printf("Agora informe o endereÃ§o do usuraio %d",i+1);
             fgets(endereco[i],30,stdin);
             fflush(stdin);
             
@@ -158,7 +159,7 @@ int id[][8];
                     fflush(stdin);
                     printf("Digite o id :");
                     scanf("%d",&iddd);
-                    for ( i = 0; i < size; i++){
+                    for ( i = 0; i < user; i++){
                     
                     if (iddd==id[i])
                     {   fflush(stdin);
@@ -175,7 +176,7 @@ int id[][8];
                     fgets(emailp,50,stdin);
                     
                     
-                for ( i = 0; i < size; i++)
+                for ( i = 0; i < user; i++)
                 {
                     if (strcmp(email[i],emailp)==0)
                     {
@@ -188,7 +189,7 @@ int id[][8];
             
             do
             {
-            printf("\nQual dado deseja Editar! \n 1-Nome \n 2-E-mail \n 3-Sexo \n 4-EndereÃ§o \n 5-Altura \n 6-Vacina \n");
+            printf("\nQual dado deseja Editar! \n 1-Nome \n 2-E-mail \n 3-Sexo \n 4-Endereço \n 5-Altura \n 6-Vacina \n");
             scanf("%d",&op);
             switch (op)
             {
@@ -235,18 +236,19 @@ int id[][8];
         int i,id[2][5],opcao[1],escolha;
         double altura[50];
         do
-        {printf("  OlÃ¡ usuÃ¡rio seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
-        printf("1-Incluir um usuÃ¡rio\n");
-        printf("2-Edite um usuÃ¡rio\n");
-        printf("3-Excluir um usuÃ¡rio\n");
-        printf("4-Buscar usuÃ¡rio pelo email ou ID \n");
-        printf("5-Exibir todos os usuÃ¡rios cadastrados\n");
-        printf("6-Realizar backup dos usuÃ¡rios cadastrados\n");
-        printf("7-Realizar restauraÃ§Ã£o dos dados\n");
+        {printf("  Olá usuário seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
+        printf("1-Incluir um usuário\n");
+        printf("2-Edite um usuário\n");
+        printf("3-Excluir um usuário\n");
+        printf("4-Buscar usuário pelo email ou ID \n");
+        printf("5-Exibir todos os usuários cadastrados\n");
+        printf("6-Realizar backup dos usuários cadastrados\n");
+        printf("7-Realizar restauração dos dados\n");
         scanf("%d",&escolha);
             switch (escolha)
             {
             case 1:
+            
                 coletadedados();
                 
                 break;
