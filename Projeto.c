@@ -19,10 +19,12 @@ double alturabackup[1000];
 char vacinacaobackup[1000][11];
 char enderecobackup[1000][50];
 int id[1000];
-
+int escolhamenu[1000];
 
         void coletadedados (){
             int i,idd;
+         
+          
             
             for ( i = 0; i < size; i++)
         {   fflush(stdin);
@@ -65,9 +67,18 @@ int id[1000];
              idd=1000+rand()%5000;
              id[i]=idd;
              printf("o id do %d usuario e: %d\n\n",i+1,id[i]);
-        }    
+        }  printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+            scanf("%d",&escolhamenu); 
+            switch (escolhamenu[i])
+            {
+            case 1:
+                main();
+                break;
+            
+            default:
+                break;
+            }
         }
-        
         
         void buscarusuario(){
                 
@@ -106,6 +117,17 @@ int id[1000];
               break;
             }
         } while (busca==1 && busca == 2);
+        printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+            scanf("%d",&escolhamenu); 
+            switch (escolhamenu[i])
+            {
+            case 1:
+                main();
+                break;
+            
+            default:
+                break;
+            }
                            }
         
         
@@ -154,7 +176,17 @@ int id[1000];
            printf("o id do %d usuario e: %d\n\n",i+1,id[i]);
             } while (strcmp(vacinacaobackup[i], "Sim") !=0 && strcmp(vacinacaobackup[i], "sim")!=0&& strcmp(vacinacaobackup[i], "Nao")!=0&& strcmp(vacinacaobackup[i], "nao")!=0);
         }
-         
+         printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+            scanf("%d",&escolhamenu); 
+            switch (escolhamenu[i])
+            {
+            case 1:
+                main();
+                break;
+            
+            default:
+                break;
+            }
         }
 
         void editarusuario(){
@@ -322,7 +354,17 @@ int id[1000];
                 break;
             }
             
+            printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+            scanf("%d",&escolhamenu[i]); 
+            switch (escolhamenu[i])
+            {
+            case 1:
+                main();
+                break;
             
+            default:
+                break;
+            }
 }
                 
         void exibirusuarios(){
@@ -344,7 +386,17 @@ int id[1000];
                 
 
             }
+            printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+            scanf("%d",&escolhamenu[i]); 
+            switch (escolhamenu[i])
+            {
+            case 1:
+                main();
+                break;
             
+            default:
+                break;
+            }
         }
     
     int main()
