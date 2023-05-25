@@ -3,7 +3,7 @@
 #include<time.h>
 #include<stdlib.h>
 #include<locale.h>
-#define size 2   
+#define size 1   
 
 char email[1000][20];
 char nome[1000][50];
@@ -150,7 +150,7 @@ int id[1000];
          
         }
 
-        void editarusuario(char email[][20],char nome[][50]){
+        void editarusuario(){
             
                 int i,busuca,iddd,op;
                 char emailp[50];
@@ -205,7 +205,7 @@ int id[1000];
                 
                 printf("Novo nome inserido com sucesso!\n");
                 getchar();
-                printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
+                printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %f\n vacina: %s",nome[i],email,sexo,endereco,altura,vacinacao);
                 break;
             case 2:
                do
@@ -215,7 +215,7 @@ int id[1000];
                 
                 printf("Novo E-mail inserido com sucesso!\n");
                 
-                printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
+                printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %f\n vacina: %s",nome,email[i],sexo,endereco,altura,vacinacao);
                 
                } while (strchr(email[i], '@') == 0);
                 
@@ -228,7 +228,8 @@ int id[1000];
             } while (op ==1 && op==2);
 }
                 
-        void exibirusuarios(){
+        void exibirusuarios(){  
+            
             int i;
 
             for ( i = 0; i < size; i++)
@@ -271,7 +272,7 @@ int id[1000];
                 
                 break;
             case 2: 
-                editarusuario(nome,email);
+                editarusuario();
                 break;
             case 6:
               backup();    
