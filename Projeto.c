@@ -40,7 +40,7 @@ int escolhamenu[1000];
         }while (strchr(email[i], '@') == 0);
             
             system("cls");
-            printf("Agora informe o endereço do usuário %d",i+1);
+            printf("Agora informe o endere?o do usu?rio %d",i+1);
             fgets(endereco[i],30,stdin);
             fflush(stdin);
            do
@@ -67,7 +67,7 @@ int escolhamenu[1000];
              idd=1000+rand()%5000;
              id[i]=idd;
              printf("o id do %d usuario e: %d\n\n",i+1,id[i]);
-        }  printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+        }  printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
             {
@@ -117,7 +117,7 @@ int escolhamenu[1000];
               break;
             }
         } while (busca==1 && busca == 2);
-        printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+        printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
             {
@@ -150,7 +150,7 @@ int escolhamenu[1000];
             
             
             system("cls");
-            printf("Agora informe o endereÃ§o do usuraio %d",i+1);
+            printf("Agora informe o endereço do usuraio %d",i+1);
             fgets(enderecobackup[i],30,stdin);
             fflush(stdin);
             
@@ -176,7 +176,7 @@ int escolhamenu[1000];
            printf("o id do %d usuario e: %d\n\n",i+1,id[i]);
             } while (strcmp(vacinacaobackup[i], "Sim") !=0 && strcmp(vacinacaobackup[i], "sim")!=0&& strcmp(vacinacaobackup[i], "Nao")!=0&& strcmp(vacinacaobackup[i], "nao")!=0);
         }
-         printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+         printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
             {
@@ -208,7 +208,7 @@ int escolhamenu[1000];
                     for ( i = 0; i < size; i++){
                     
                     if (iddd==id[i])
-                    {   printf("\nDados do usuário\n");
+                    {   printf("\nDados do usu?rio\n");
                         printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2f\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
                         
                     }else printf("erro");
@@ -224,7 +224,7 @@ int escolhamenu[1000];
                 for ( i = 0; i < size; i++)
                 {
                     if (strcmp(email,emailp)==0)
-                    {   printf("\nDados do usuário\n");
+                    {   printf("\nDados do usu?rio\n");
                         printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
                     }else printf("erro");
                     
@@ -233,7 +233,7 @@ int escolhamenu[1000];
                }while (busca==1 && busca == 2);
             
            
-            printf("\nQual dado deseja Editar! \n 1-Nome \n 2-E-mail \n 3-Sexo \n 4-Endereço \n 5-Altura \n 6-Vacina \n");
+            printf("\nQual dado deseja Editar! \n 1-Nome \n 2-E-mail \n 3-Sexo \n 4-Endere?o \n 5-Altura \n 6-Vacina \n");
             scanf("%d",&op);
             
             switch (op)
@@ -249,7 +249,7 @@ int escolhamenu[1000];
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
                 printf("altura:%f\n", altura[i]);
-                printf("vacinação:%s\n", vacinacao);
+                printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                 
@@ -269,7 +269,7 @@ int escolhamenu[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%f\n", altura[i]);
-                printf("vacinação:%s\n", vacinacao);
+                printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                } while (strchr(email[i], '@') == 0);
@@ -288,17 +288,17 @@ int escolhamenu[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%f\n", altura[i]);
-                printf("vacinação:%s\n", vacinacao);
+                printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                } while (strcmp(sexo[i], "masculino") !=0 && strcmp(sexo[i], "feminino")!=0&& strcmp(sexo[i], "indiferente")!=0);
                break;
                case 4:
                 getchar();
-                printf("Insira o novo Endereço\n");
+                printf("Insira o novo Endere?o\n");
                 fgets(endereco,50,stdin);
                
-                printf("Novo Endereço inserido com sucesso!\n");
+                printf("Novo Endere?o inserido com sucesso!\n");
                 
                 printf("nome:%s\n", nome);
                 printf("E-mail:%s\n", email);
@@ -306,7 +306,7 @@ int escolhamenu[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%f\n", altura[i]);
-                printf("vacinação:%s\n", vacinacao);
+                printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
               
@@ -325,7 +325,7 @@ int escolhamenu[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%f\n", altura[i]);
-                printf("vacinação:%s\n", vacinacao);
+                printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                } while (strcmp(sexo[i], "masculino") !=0 && strcmp(sexo[i], "feminino")!=0&& strcmp(sexo[i], "indiferente")!=0);
@@ -333,7 +333,7 @@ int escolhamenu[1000];
                case 6:
                 do
                {getchar();
-                printf("Insira o nova vacinação\n");
+                printf("Insira o nova vacina??o\n");
                 fgets(vacinacao,50,stdin);
                
                 printf("Novo Sexo inserido com sucesso!\n");
@@ -344,7 +344,7 @@ int escolhamenu[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%f\n", altura[i]);
-                printf("vacinação:%s\n", vacinacao);
+                printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                } while (strcmp(sexo[i], "masculino") !=0 && strcmp(sexo[i], "feminino")!=0&& strcmp(sexo[i], "indiferente")!=0);
@@ -354,7 +354,7 @@ int escolhamenu[1000];
                 break;
             }
             
-            printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+            printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
             scanf("%d",&escolhamenu[i]); 
             switch (escolhamenu[i])
             {
@@ -379,14 +379,14 @@ int escolhamenu[1000];
                 printf("E-mail :%s\n ",email[i]);
                 
                 printf("Sexo :%s\n ",sexo[i]);
-                printf("Endereço :%d\n ",endereco[i]);
+                printf("Endere?o :%d\n ",endereco[i]);
                 printf("Altura :%d\n ",altura[i]);
                 
                 printf("Vacina :%s\n ",vacinacao[i]);
                 
 
             }
-            printf("Deseja ir para po menu inicial digite 1 sim ou 2 não");
+            printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
             scanf("%d",&escolhamenu[i]); 
             switch (escolhamenu[i])
             {
@@ -405,14 +405,14 @@ int escolhamenu[1000];
         int escolha;
         
         do
-        {printf("  Olá usuário seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
-        printf("1-Incluir um usuário\n");
-        printf("2-Edite um usuário\n");
-        printf("3-Excluir um usuário\n");
-        printf("4-Buscar usuário pelo email ou ID \n");
-        printf("5-Exibir todos os usuários cadastrados\n");
-        printf("6-Realizar backup dos usuários cadastrados\n");
-        printf("7-Realizar restauração dos dados\n");
+        {printf("  Ol? usu?rio seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
+        printf("1-Incluir um usu?rio\n");
+        printf("2-Edite um usu?rio\n");
+        printf("3-Excluir um usu?rio\n");
+        printf("4-Buscar usu?rio pelo email ou ID \n");
+        printf("5-Exibir todos os usu?rios cadastrados\n");
+        printf("6-Realizar backup dos usu?rios cadastrados\n");
+        printf("7-Realizar restaura??o dos dados\n");
         scanf("%d",&escolha);
             switch (escolha)
             {
