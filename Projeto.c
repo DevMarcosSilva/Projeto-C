@@ -22,36 +22,36 @@ double alturabackup[1000];
             
             for ( i = 0; i < qtdausuarios; i++)
         {   fflush(stdin);
-            printf("Informe o nome completo do %d usuario: ",i+1);
+            printf("Informe o nome completo do %d usuários: ",i+1);
             fgets(nome[i], 50, stdin);
             fflush(stdin);
             system("cls");
         do
         {
-            printf("Agora informe o email do %d usuraio ",i+1);
+            printf("Agora informe o email do %d usuários ",i+1);
             fgets(email[i],20,stdin);
             fflush(stdin);
         }while (strchr(email[i], '@') == 0);
             
             system("cls");
-            printf("Agora informe o endere?o do usuário %d",i+1);
+            printf("Agora informe o Endereço do usuário %d",i+1);
             fgets(endereco[i],30,stdin);
             fflush(stdin);
            do
            {
-            printf("Informe a altura do usuario %d",i+1);
+            printf("Informe a altura do usuários %d",i+1);
             scanf("%f",&altura);
-           } while (altura<1 && altura>2);
+           } while (altura[i]<1 || altura[i] >2);
             
         do
         {    fflush(stdin);
-             printf("informe o sexo do %d usuario: Feminino Masculino ou Iindiferente ",i+1);
+             printf("informe o sexo do %d usuários: Feminino Masculino ou Iindiferente ",i+1);
              scanf("%s",sexo[i]);
              
         } while (strcmp(sexo[i], "masculino") !=0 && strcmp(sexo[i], "feminino")!=0&& strcmp(sexo[i], "indiferente")!=0);
         do
         {
-             printf("o usuario %d foi vacinado ? 1-Sim ou 2-Nao",i+1);
+             printf("o usuários %d foi vacinado ? 1-Sim ou 2-Nao",i+1);
              scanf("%s",vacinacao[i]);
              fflush(stdin);
           
@@ -60,7 +60,7 @@ double alturabackup[1000];
              srand(time(NULL));
              idd=1000+rand()%5000;
              id[i]=idd;
-             printf("o id do %d usuario e: %d\n\n",i+1,id[i]);
+             printf("o id do %d usuários e: %d\n\n",i+1,id[i]);
         }  printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
@@ -129,13 +129,13 @@ double alturabackup[1000];
             int i,idd;
         for ( i = 0; i < qtdausuarios; i++)
         {   fflush(stdin);
-            printf("Informe o nome completo do %d usuario: ",i+1);
+            printf("Informe o nome completo do %d usuários: ",i+1);
             fgets(nomebackup[i], 50, stdin);
             fflush(stdin);
             system("cls");
             do
             {
-                printf("Agora informe o email do %d usuraio ",i+1);
+                printf("Agora informe o email do %d usuários ",i+1);
 
             fgets(emailbackup[i],20,stdin);
             fflush(stdin);
@@ -144,16 +144,16 @@ double alturabackup[1000];
             
             
             system("cls");
-            printf("Agora informe o endereço do usuraio %d",i+1);
+            printf("Agora informe o endereço do usuários %d",i+1);
             fgets(enderecobackup[i],30,stdin);
             fflush(stdin);
             
             fflush(stdin);
-            printf("Informe a altura do usuario %d",i+1);
+            printf("Informe a altura do usuários %d",i+1);
                 scanf("%lf",&alturabackup[i]);
             do
             {
-             printf("informe o sexo do %d usuario: Feminino Masculino ou Iindiferente ",i+1);
+             printf("informe o sexo do %d usuários: Feminino Masculino ou Iindiferente ",i+1);
              scanf("%s",sexobackup[i]);
              fflush(stdin);
             } while (strcmp(sexobackup[i], "masculino") !=0 && strcmp(sexobackup[i], "feminino")!=0&& strcmp(sexobackup[i], "indiferente")!=0);
@@ -167,7 +167,7 @@ double alturabackup[1000];
            
            idd=1000+rand()%5000;
            id[i]=idd;
-           printf("o id do %d usuario e: %d\n\n",i+1,id[i]);
+           printf("o id do %d usuários e: %d\n\n",i+1,id[i]);
             } while (strcmp(vacinacaobackup[i], "Sim") !=0 && strcmp(vacinacaobackup[i], "sim")!=0&& strcmp(vacinacaobackup[i], "Nao")!=0&& strcmp(vacinacaobackup[i], "nao")!=0);
         }
          printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
@@ -190,7 +190,7 @@ double alturabackup[1000];
                 char emailp[50];
               
                do
-               {     printf("Digite 1 para bucar o usuario pelo id ou qualquer valor para buspa por e-mail, ou 3 para sair; ");
+               {     printf("Digite 1 para bucar o usuários pelo id ou qualquer valor para buspa por e-mail, ou 3 para sair; ");
                      scanf("%d",&busca);
                     switch (busca)
                 {
@@ -227,7 +227,7 @@ double alturabackup[1000];
                }while (busca==1 && busca == 2);
             
            
-            printf("\nQual dado deseja Editar! \n 1-Nome \n 2-E-mail \n 3-Sexo \n 4-Endere?o \n 5-Altura \n 6-Vacina \n");
+            printf("\nQual dado deseja Editar! \n 1-Nome \n 2-E-mail \n 3-Sexo \n 4-Endereço \n 5-Altura \n 6-Vacina \n");
             scanf("%d",&op);
             
             switch (op)
@@ -243,7 +243,7 @@ double alturabackup[1000];
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
                 printf("altura:%.2f\n", altura[i]);
-                printf("vacina??o:%s\n", vacinacao);
+                printf("vacinação:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                 
@@ -263,7 +263,7 @@ double alturabackup[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%.2f\n", altura[i]);
-                printf("vacina??o:%s\n", vacinacao);
+                printf("vacinação:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                } while (strchr(email[i], '@') == 0);
@@ -282,17 +282,17 @@ double alturabackup[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%.2f\n", altura[i]);
-                printf("vacina??o:%s\n", vacinacao);
+                printf("vacinação:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                } while (strcmp(sexo[i], "masculino") !=0 && strcmp(sexo[i], "feminino")!=0&& strcmp(sexo[i], "indiferente")!=0);
                break;
                case 4:
                 getchar();
-                printf("Insira o novo Endere?o\n");
+                printf("Insira o novo Endereço\n");
                 fgets(endereco,50,stdin);
                
-                printf("Novo Endere?o inserido com sucesso!\n");
+                printf("Novo Endereço inserido com sucesso!\n");
                 
                 printf("nome:%s\n", nome);
                 printf("E-mail:%s\n", email);
@@ -300,7 +300,7 @@ double alturabackup[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%.2f\n", altura[i]);
-                printf("vacina??o:%s\n", vacinacao);
+                printf("vacinação:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
               
@@ -319,7 +319,7 @@ double alturabackup[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%.2f\n", altura[i]);
-                printf("vacina??o:%s\n", vacinacao);
+                printf("vacinação:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                } while (strcmp(sexo[i], "masculino") !=0 && strcmp(sexo[i], "feminino")!=0&& strcmp(sexo[i], "indiferente")!=0);
@@ -327,7 +327,7 @@ double alturabackup[1000];
                case 6:
                 do
                {getchar();
-                printf("Insira o nova vacina??o\n");
+                printf("Insira o nova vacinação\n");
                 fgets(vacinacao,50,stdin);
                
                 printf("Novo Sexo inserido com sucesso!\n");
@@ -338,7 +338,7 @@ double alturabackup[1000];
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
                 printf("altura:%.2f\n", altura[i]);
-                printf("vacina??o:%s\n", vacinacao);
+                printf("vacinação:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
                } while (strcmp(sexo[i], "masculino") !=0 && strcmp(sexo[i], "feminino")!=0&& strcmp(sexo[i], "indiferente")!=0);
@@ -373,7 +373,7 @@ double alturabackup[1000];
                 printf("E-mail :%s\n ",email[i]);
                 
                 printf("Sexo :%s\n ",sexo[i]);
-                printf("Endere?o :%d\n ",endereco[i]);
+                printf("Endereço :%d\n ",endereco[i]);
                 printf("Altura :%d\n ",altura[i]);
                 
                 printf("Vacina :%s\n ",vacinacao[i]);
@@ -406,7 +406,7 @@ double alturabackup[1000];
         printf("4-Buscar usuário pelo email ou ID \n");
         printf("5-Exibir todos os usuários cadastrados\n");
         printf("6-Realizar backup dos usuários cadastrados\n");
-        printf("7-Realizar restaura??o dos dados\n");
+        printf("7-Realizar restauração de dados\n");
         scanf("%d",&escolha);
             switch (escolha)
             {
