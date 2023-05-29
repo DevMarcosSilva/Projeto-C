@@ -395,72 +395,51 @@ double alturabackup[1000];
             }
         }
 
-        void excluirusuario(){
-            
-             int i,busca,iddd,escolha;
-             char emailp[50];
-        do
-        {
-             printf("Digite 1 para busca pelo id ou qualquer valor para buscar por e-mail, ou 3 para sair; ");
-             scanf("%d",&busca);
-                    
-            switch (busca)
-            {
-            case 1:
-                printf("Digite o id :");
-                scanf("%d",&iddd);
-             
-             for ( i = 0; i < qtdausuarios; i++)
-             {  if (iddd==id[i])
-                { 
-                printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
-                }
-                else printf("erro");
-             }
-                break;
-                    
-            case 2:
-                printf("Digite o E-mail:");
-                fgets(emailp,50,stdin);
-             
-             for ( i = 0; i < qtdausuarios; i++)
-             {  if (strcmp(email[i],emailp)==0)
-                {
-                 printf("\n nome:%s \n e-mail: %s\n Sexo: %s\n Endereco %s\n altura %.2lf\n vacina: %s\n",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
-                }else printf("erro");
-             }
-              break;
+        void excluirusuario() {
+    int i, iddd, j;
+
+    printf("Digite o ID do usuário que deseja excluir: ");
+    scanf("%d", &iddd);
+
+    for (i = 0; i < qtdausuarios; i++) {
+        if (iddd == id[i]) {
+            printf("\nUsuário excluído:\n");
+            printf("ID: %d\n", id[i]);
+            printf("Nome: %s", nome[i]);
+            printf("Email: %s", email[i]);
+            printf("Endereço: %s", endereco[i]);
+            printf("Altura: %.2f\n", altura[i]);
+            printf("Sexo: %s\n", sexo[i]);
+            printf("Vacinado: %s\n\n", vacinacao[i]);
+
+            for (j = i; j < qtdausuarios - 1; j++) {
+                strcpy(nome[j], nome[j + 1]);
+                strcpy(email[j], email[j + 1]);
+                strcpy(endereco[j], endereco[j + 1]);
+                altura[j] = altura[j + 1];
+                strcpy(sexo[j], sexo[j + 1]);
+                strcpy(vacinacao[j], vacinacao[j + 1]);
+                id[j] = id[j + 1];
             }
-        } while (busca==1 && busca == 2);
-            printf("Deseja realmente excluir o usuario?Digite 1 ou 2 para não");
-            scanf("%d",&escolha);
-            switch (escolha)
-            {
-            case 1:
-                nome[i][i]=0;
-                email[i][i]=0;
-                sexo[i][i]=0;
-                endereco[i][i]=0;
-                altura[i]=0;
-                vacinacao[i][i]=0;
-                printf("Usuario excluido com sucesso!");
+
+            qtdausuarios--;
+            printf("Usuário excluído com sucesso!\n\n");
             break;
-            
-            default:
-                break;
-            }
-            
-            printf("Para retornar ao menu inicial digite 1!");
-            scanf("%d",&escolhamenu); 
-            switch (escolhamenu[i])
-            {
-            case 1:
-                main();
-                break;
-            default:
-                break;
-            }
-        }    
+        }
+    }
+
+    if (i == qtdausuarios) {
+        printf("\nUsuário não encontrado.\n\n");
+    }
+
+    printf("Para retornar ao menu inicial, digite 1: ");
+    scanf("%d", &escolhamenu[i]);
+    switch (escolhamenu[i]) {
+        case 1:
+            main();
+            break;
+    }
+}
    
     int main()
     {   setlocale(LC_ALL,"");
