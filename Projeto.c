@@ -5,22 +5,15 @@
 #include<locale.h>
    
 
-char email[1000][20];
-char nome[100][50];
-char sexo[100][11];
+char email[1000][20],nome[100][50],sexo[100][11],vacinacao[1000][11],endereco[1000][50],emailbackup[1000][20],sexobackup[0][11],vacinacaobackup[1000][11],nomebackup[1000][50],enderecobackup[1000][50];
+
 float altura[1000];
-char vacinacao[1000][11];
-char endereco [1000][50];
-int id[1000];
-char emailbackup[1000][20];
-char nomebackup[0][50];
-char sexobackup[0][11];
+
+int id[1000],escolhamenu[1000],qtdausuarios;
+
 double alturabackup[1000];
-char vacinacaobackup[1000][11];
-char enderecobackup[1000][50];
-int id[1000];
-int escolhamenu[1000];
-int qtdausuarios;
+
+
         void coletadedados (){
             int i,idd;
          
