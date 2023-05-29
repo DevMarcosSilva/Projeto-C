@@ -61,14 +61,15 @@ double alturabackup[1000];
              idd=1000+rand()%5000;
              id[i]=idd;
              printf("o id do %d usuários e: %d\n\n",i+1,id[i]);
-        }  printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
+        }  printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
             {
             case 1:
                 main();
                 break;
-            
+           
+               
             default:
                 break;
             }
@@ -111,7 +112,7 @@ double alturabackup[1000];
               break;
             }
         } while (busca==1 && busca == 2);
-        printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
+        printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
             {
@@ -123,8 +124,7 @@ double alturabackup[1000];
                 break;
             }
                            }
-        
-        
+               
         void backup(){
             int i,idd;
         for ( i = 0; i < qtdausuarios; i++)
@@ -170,7 +170,7 @@ double alturabackup[1000];
            printf("o id do %d usuários e: %d\n\n",i+1,id[i]);
             } while (strcmp(vacinacaobackup[i], "Sim") !=0 && strcmp(vacinacaobackup[i], "sim")!=0&& strcmp(vacinacaobackup[i], "Nao")!=0&& strcmp(vacinacaobackup[i], "nao")!=0);
         }
-         printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
+         printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
             {
@@ -348,7 +348,7 @@ double alturabackup[1000];
                 break;
             }
             
-            printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
+            printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu[i]); 
             switch (escolhamenu[i])
             {
@@ -380,7 +380,7 @@ double alturabackup[1000];
                 
 
             }
-            printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
+            printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu[i]); 
             switch (escolhamenu[i])
             {
@@ -397,7 +397,6 @@ double alturabackup[1000];
     {   setlocale(LC_ALL,"");
         
         int escolha;
-        
         do
         {printf("  olá usuário seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
         printf("1-Incluir um usuário\n");
@@ -405,30 +404,32 @@ double alturabackup[1000];
         printf("3-Excluir um usuário\n");
         printf("4-Buscar usuário pelo email ou ID \n");
         printf("5-Exibir todos os usuários cadastrados\n");
-        printf("6-Realizar backup dos usuários cadastrados\n");
-        printf("7-Realizar restauração de dados\n");
+        printf("6-Realizar restauração de dados\n");
+        printf("7-Encerrar Programa!");
         scanf("%d",&escolha);
             switch (escolha)
             {
             case 1:
                 coletadedados();
-                
                 break;
             case 2: 
                 editarusuario();
                 break;
             case 6:
-               backup();    
+                backup();    
             case 4:
                 buscarusuario();
                 break;
-                case 5:
+            case 5:
                 exibirusuarios();
                 break;
             default:
                 break;
             }
-                } while (escolha==1);
+        } while (escolha==1);
+        
+        
+               
         
         
     }
