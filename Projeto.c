@@ -3,7 +3,7 @@
 #include<time.h>
 #include<stdlib.h>
 #include<locale.h>
-#define size 1   
+   
 
 char email[1000][20];
 char nome[100][50];
@@ -20,13 +20,14 @@ char vacinacaobackup[1000][11];
 char enderecobackup[1000][50];
 int id[1000];
 int escolhamenu[1000];
-
+int qtdausuarios;
         void coletadedados (){
             int i,idd;
          
-          
+          printf("Quantos usuários deseja incluir?Obs:máximo 1000!");
+          scanf("%d",&qtdausuarios);
             
-            for ( i = 0; i < size; i++)
+            for ( i = 0; i < qtdausuarios; i++)
         {   fflush(stdin);
             printf("Informe o nome completo do %d usuario: ",i+1);
             fgets(nome[i], 50, stdin);
@@ -40,7 +41,7 @@ int escolhamenu[1000];
         }while (strchr(email[i], '@') == 0);
             
             system("cls");
-            printf("Agora informe o endere?o do usu?rio %d",i+1);
+            printf("Agora informe o endere?o do usuário %d",i+1);
             fgets(endereco[i],30,stdin);
             fflush(stdin);
            do
@@ -95,7 +96,7 @@ int escolhamenu[1000];
                 printf("Digite o id :");
                 scanf("%d",&iddd);
              
-             for ( i = 0; i < size; i++)
+             for ( i = 0; i < qtdausuarios; i++)
              {  if (iddd==id[i])
                 { 
                 printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
@@ -108,7 +109,7 @@ int escolhamenu[1000];
                 printf("Digite o E-mail:");
                 fgets(emailp,50,stdin);
              
-             for ( i = 0; i < size; i++)
+             for ( i = 0; i < qtdausuarios; i++)
              {  if (strcmp(email[i],emailp)==0)
                 {
                  printf("\n nome:%s \n e-mail: %s\n Sexo: %s\n Endereco %s\n altura %.2lf\n vacina: %s\n",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
@@ -133,7 +134,7 @@ int escolhamenu[1000];
         
         void backup(){
             int i,idd;
-        for ( i = 0; i < size; i++)
+        for ( i = 0; i < qtdausuarios; i++)
         {   fflush(stdin);
             printf("Informe o nome completo do %d usuario: ",i+1);
             fgets(nomebackup[i], 50, stdin);
@@ -205,10 +206,10 @@ int escolhamenu[1000];
                     printf("Digite o id :");
                     scanf("%d",&iddd);
                     
-                    for ( i = 0; i < size; i++){
+                    for ( i = 0; i < qtdausuarios; i++){
                     
                     if (iddd==id[i])
-                    {   printf("\nDados do usu?rio\n");
+                    {   printf("\nDados do usuário\n");
                         printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2f\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
                         
                     }else printf("erro");
@@ -221,10 +222,10 @@ int escolhamenu[1000];
                     fgets(emailp,50,stdin);
                     
                     
-                for ( i = 0; i < size; i++)
+                for ( i = 0; i < qtdausuarios; i++)
                 {
                     if (strcmp(email,emailp)==0)
-                    {   printf("\nDados do usu?rio\n");
+                    {   printf("\nDados do usuário\n");
                         printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
                     }else printf("erro");
                     
@@ -248,7 +249,7 @@ int escolhamenu[1000];
                 printf("E-mail:%s\n", email);
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
-                printf("altura:%f\n", altura[i]);
+                printf("altura:%.2f\n", altura[i]);
                 printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
@@ -268,7 +269,7 @@ int escolhamenu[1000];
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
-                printf("altura:%f\n", altura[i]);
+                printf("altura:%.2f\n", altura[i]);
                 printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
@@ -287,7 +288,7 @@ int escolhamenu[1000];
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
-                printf("altura:%f\n", altura[i]);
+                printf("altura:%.2f\n", altura[i]);
                 printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
@@ -305,7 +306,7 @@ int escolhamenu[1000];
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
-                printf("altura:%f\n", altura[i]);
+                printf("altura:%.2f\n", altura[i]);
                 printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
@@ -324,7 +325,7 @@ int escolhamenu[1000];
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
-                printf("altura:%f\n", altura[i]);
+                printf("altura:%.2f\n", altura[i]);
                 printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
@@ -343,7 +344,7 @@ int escolhamenu[1000];
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
                 fflush(stdin);
-                printf("altura:%f\n", altura[i]);
+                printf("altura:%.2f\n", altura[i]);
                 printf("vacina??o:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
@@ -370,7 +371,7 @@ int escolhamenu[1000];
         void exibirusuarios(){
             int i;
 
-            for ( i = 0; i < size; i++)
+            for ( i = 0; i < qtdausuarios; i++)
             {
                 printf("usuario %d: ",i+1);
                 
@@ -405,13 +406,13 @@ int escolhamenu[1000];
         int escolha;
         
         do
-        {printf("  Ol? usu?rio seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
-        printf("1-Incluir um usu?rio\n");
-        printf("2-Edite um usu?rio\n");
-        printf("3-Excluir um usu?rio\n");
-        printf("4-Buscar usu?rio pelo email ou ID \n");
-        printf("5-Exibir todos os usu?rios cadastrados\n");
-        printf("6-Realizar backup dos usu?rios cadastrados\n");
+        {printf("  olá usuário seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
+        printf("1-Incluir um usuário\n");
+        printf("2-Edite um usuário\n");
+        printf("3-Excluir um usuário\n");
+        printf("4-Buscar usuário pelo email ou ID \n");
+        printf("5-Exibir todos os usuários cadastrados\n");
+        printf("6-Realizar backup dos usuários cadastrados\n");
         printf("7-Realizar restaura??o dos dados\n");
         scanf("%d",&escolha);
             switch (escolha)
