@@ -5,7 +5,7 @@
 #include<locale.h>
    
 
-char email[1000][20],nome[100][50],sexo[100][11],vacinacao[1000][11],endereco[1000][50],emailbackup[1000][20],sexobackup[0][11],vacinacaobackup[1000][11],nomebackup[1000][50],enderecobackup[1000][50];
+char email[1000][20],nome[100][50],sexo[1000][11],vacinacao[1000][11],endereco[1000][50],emailbackup[1000][20],sexobackup[1000][11],vacinacaobackup[1000][11],nomebackup[1000][50],enderecobackup[1000][50];
 
 float altura[1000];
 
@@ -17,50 +17,55 @@ double alturabackup[1000];
         void coletadedados (){
             int i,idd;
          
-          printf("Quantos usuários deseja incluir?Obs:máximo 1000!");
+          printf("Quantos usuários deseja incluir? Obs:máximo 1.000! ");
           scanf("%d",&qtdausuarios);
             
             for ( i = 0; i < qtdausuarios; i++)
         {   fflush(stdin);
-            printf("Informe o nome completo do %d usuários: ",i+1);
+            printf("Informe o nome completo do %dº usuários: ",i+1);
             fgets(nome[i], 50, stdin);
             fflush(stdin);
             system("cls");
         do
         {
-            printf("Agora informe o email do %d usuários ",i+1);
+            printf("Agora informe o E-mail do %dº usuários: ",i+1);
             fgets(email[i],20,stdin);
             fflush(stdin);
+            
         }while (strchr(email[i], '@') == 0);
             
             system("cls");
-            printf("Agora informe o Endereço do usuário %d",i+1);
+            printf("Agora informe o Endereço do %dº usuário: ",i+1);
             fgets(endereco[i],30,stdin);
             fflush(stdin);
+            system("cls");
            do
            {
-            printf("Informe a altura do usuários %d",i+1);
-            scanf("%f",&altura);
+            printf("Informe a altura do %dº usuários: ",i+1);
+            scanf("%f",&altura[i]);
+            system("cls");
            } while (altura[i]<1 || altura[i] >2);
             
         do
         {    fflush(stdin);
-             printf("informe o sexo do %d usuários: Feminino Masculino ou Iindiferente ",i+1);
+             printf("informe o sexo do %dº usuários: Feminino Masculino ou Indiferente:  ",i+1);
              scanf("%s",sexo[i]);
+             system("cls");
              
         } while (strcmp(sexo[i], "masculino") !=0 && strcmp(sexo[i], "feminino")!=0&& strcmp(sexo[i], "indiferente")!=0);
         do
         {
-             printf("o usuários %d foi vacinado ? 1-Sim ou 2-Nao",i+1);
+             printf("o usuários %dº foi vacinado ? Sim ou Não ",i+1);
              scanf("%s",vacinacao[i]);
+             system("cls");
              fflush(stdin);
           
-        } while (strcmp(vacinacao[i], "Sim") !=0 && strcmp(vacinacao[i], "sim")!=0&& strcmp(vacinacao[i], "Nao")!=0&& strcmp(vacinacao[i], "nao")!=0);
+        } while (strcmp(vacinacao[i], "Sim") !=0 && strcmp(vacinacao[i], "sim")!=0 && strcmp(vacinacao[i], "Nao")!=0 && strcmp(vacinacao[i], "nao")!=0);
         
              srand(time(NULL));
              idd=1000+rand()%5000;
              id[i]=idd;
-             printf("o id do %d usuários e: %d\n\n",i+1,id[i]);
+             printf("o id do %dº usuários e: %d\n\n",i+1,id[i]);
         }  printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
@@ -91,7 +96,7 @@ double alturabackup[1000];
                 scanf("%d",&iddd);
              
              for ( i = 0; i < qtdausuarios; i++)
-             {  if (iddd==id[i])
+             {  if (iddd!=id[i])
                 { 
                 printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
                 }
@@ -135,7 +140,7 @@ double alturabackup[1000];
             system("cls");
             do
             {
-                printf("Agora informe o email do %d usuários ",i+1);
+                printf("Agora informe o E-mail do %d usuários ",i+1);
 
             fgets(emailbackup[i],20,stdin);
             fflush(stdin);
@@ -255,7 +260,7 @@ double alturabackup[1000];
                 printf("Insira o novo E-mail\n");
                 fgets(email,50,stdin);
                
-                printf("Novo Email inserido com sucesso!\n");
+                printf("Novo E-mail doserido com sucesso!\n");
                 
                 printf("nome:%s\n", nome);
                 printf("E-mail:%s\n", email);
@@ -373,8 +378,8 @@ double alturabackup[1000];
                 printf("E-mail :%s\n ",email[i]);
                 
                 printf("Sexo :%s\n ",sexo[i]);
-                printf("Endereço :%d\n ",endereco[i]);
-                printf("Altura :%d\n ",altura[i]);
+                printf("Endereço :%s\n ",endereco[i]);
+                printf("Altura :%0.2f\n ",altura[i]);
                 
                 printf("Vacina :%s\n ",vacinacao[i]);
                 
@@ -398,14 +403,17 @@ double alturabackup[1000];
         
         int escolha;
         do
-        {printf("  olá usuário seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
-        printf("1-Incluir um usuário\n");
-        printf("2-Edite um usuário\n");
-        printf("3-Excluir um usuário\n");
-        printf("4-Buscar usuário pelo email ou ID \n");
-        printf("5-Exibir todos os usuários cadastrados\n");
-        printf("6-Realizar restauração de dados\n");
-        printf("7-Encerrar Programa!");
+        {printf("====== Olá usuário seja bem vindo ========\n");
+        printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
+        printf("   1. Incluir um usuário\n");
+        printf("   2. Edite um usuário\n");
+        printf("   3. Excluir usuário\n");
+        printf("   4. Buscar usuário pelo E-mail do ID\n");
+        printf("   5. Exibir todos os usuários cadastrados\n");
+        printf("   6. Realizar restauração de dados\n");
+        printf("   7. Encerrar Programa!\n");
+        printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
+        printf("Informe a opção desejada: ");
         scanf("%d",&escolha);
             switch (escolha)
             {

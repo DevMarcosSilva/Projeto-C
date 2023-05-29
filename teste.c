@@ -9,13 +9,11 @@ char email[1000][20],nome[100][50],sexo[100][11],vacinacao[1000][11],endereco[10
 
 float altura[1000];
 
-int id[1000],escolhamenu,qtdausuarios;
+int id[1000],escolhamenu[1000],qtdausuarios;
 
 double alturabackup[1000];
 
-void encerrarprograma(){
-    printf("programa encerrado!!");
-}
+
         void coletadedados (){
             int i,idd;
          
@@ -42,7 +40,7 @@ void encerrarprograma(){
            do
            {
             printf("Informe a altura do usuários %d",i+1);
-            scanf("%f",&altura);
+            scanf("%f",&altura[i]);
            } while (altura[i]<1 || altura[i] >2);
             
         do
@@ -63,16 +61,15 @@ void encerrarprograma(){
              idd=1000+rand()%5000;
              id[i]=idd;
              printf("o id do %d usuários e: %d\n\n",i+1,id[i]);
-        }  printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
+        }  printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu); 
-            switch (escolhamenu)
+            switch (escolhamenu[i])
             {
             case 1:
                 main();
                 break;
-            case 2:
-                encerrarprograma();
-                break;
+           
+               
             default:
                 break;
             }
@@ -115,15 +112,14 @@ void encerrarprograma(){
               break;
             }
         } while (busca==1 && busca == 2);
-        printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
+        printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu); 
-            switch (escolhamenu)
+            switch (escolhamenu[i])
             {
             case 1:
                 main();
                 break;
-                case 2:
-                encerrarprograma();
+            
             default:
                 break;
             }
@@ -174,9 +170,9 @@ void encerrarprograma(){
            printf("o id do %d usuários e: %d\n\n",i+1,id[i]);
             } while (strcmp(vacinacaobackup[i], "Sim") !=0 && strcmp(vacinacaobackup[i], "sim")!=0&& strcmp(vacinacaobackup[i], "Nao")!=0&& strcmp(vacinacaobackup[i], "nao")!=0);
         }
-         printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
+         printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu); 
-            switch (escolhamenu)
+            switch (escolhamenu[i])
             {
             case 1:
                 main();
@@ -352,9 +348,9 @@ void encerrarprograma(){
                 break;
             }
             
-            printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
-            scanf("%d",&escolhamenu); 
-            switch (escolhamenu)
+            printf("Para retornar ao menu inicial digite 1!");
+            scanf("%d",&escolhamenu[i]); 
+            switch (escolhamenu[i])
             {
             case 1:
                 main();
@@ -370,23 +366,25 @@ void encerrarprograma(){
 
             for ( i = 0; i < qtdausuarios; i++)
             {
-                printf("usuario %d: ",i+1);
+                printf("\nusuario %d: \n",i+1);
                 
-                printf("nome :%s\n ",nome[i] );
+                printf("\nnome:%s\n ",nome[i] );
                 
-                printf("E-mail :%s\n ",email[i]);
+                printf("\nE-mail: %s\n ",email[i]);
                 
-                printf("Sexo :%s\n ",sexo[i]);
-                printf("Endereço :%d\n ",endereco[i]);
-                printf("Altura :%d\n ",altura[i]);
+                printf("\nSexo: %s\n ",sexo[i]);
                 
-                printf("Vacina :%s\n ",vacinacao[i]);
+                printf("\nEndereço: %s\n ",endereco[i]);
+                
+                printf("\nAltura: %0.2f\n ",altura[i]);
+                
+                printf("\nVacina: %s\n ",vacinacao[i]);
                 
 
             }
-            printf("Deseja ir para po menu inicial digite 1 sim ou 2 n?o");
-            scanf("%d",&escolhamenu); 
-            switch (escolhamenu)
+            printf("Para retornar ao menu inicial digite 1!");
+            scanf("%d",&escolhamenu[i]); 
+            switch (escolhamenu[i])
             {
             case 1:
                 main();
@@ -396,12 +394,78 @@ void encerrarprograma(){
                 break;
             }
         }
-    
+
+        void excluirusuario(){
+            
+             int i,busca,iddd,escolha;
+             char emailp[50];
+        do
+        {
+             printf("Digite 1 para busca pelo id ou qualquer valor para buscar por e-mail, ou 3 para sair; ");
+             scanf("%d",&busca);
+                    
+            switch (busca)
+            {
+            case 1:
+                printf("Digite o id :");
+                scanf("%d",&iddd);
+             
+             for ( i = 0; i < qtdausuarios; i++)
+             {  if (iddd==id[i])
+                { 
+                printf("nome:%s \ne-mail: %s\n Sexo: %s\nEndereco %s\naltura %.2lf\n vacina: %s",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
+                }
+                else printf("erro");
+             }
+                break;
+                    
+            case 2:
+                printf("Digite o E-mail:");
+                fgets(emailp,50,stdin);
+             
+             for ( i = 0; i < qtdausuarios; i++)
+             {  if (strcmp(email[i],emailp)==0)
+                {
+                 printf("\n nome:%s \n e-mail: %s\n Sexo: %s\n Endereco %s\n altura %.2lf\n vacina: %s\n",nome[i],email[i],sexo[i],endereco[i],altura[i],vacinacao[i]);
+                }else printf("erro");
+             }
+              break;
+            }
+        } while (busca==1 && busca == 2);
+            printf("Deseja realmente excluir o usuario?Digite 1 ou 2 para não");
+            scanf("%d",&escolha);
+            switch (escolha)
+            {
+            case 1:
+                nome[i][i]=0;
+                email[i][i]=0;
+                sexo[i][i]=0;
+                endereco[i][i]=0;
+                altura[i]=0;
+                vacinacao[i][i]=0;
+                printf("Usuario excluido com sucesso!");
+            break;
+            
+            default:
+                break;
+            }
+            
+            printf("Para retornar ao menu inicial digite 1!");
+            scanf("%d",&escolhamenu); 
+            switch (escolhamenu[i])
+            {
+            case 1:
+                main();
+                break;
+            default:
+                break;
+            }
+        }    
+   
     int main()
     {   setlocale(LC_ALL,"");
         
         int escolha;
-        
         do
         {printf("  olá usuário seja Bem vindo!\n  Informe qual processo deseja realizar!\n\n");
         printf("1-Incluir um usuário\n");
@@ -410,6 +474,7 @@ void encerrarprograma(){
         printf("4-Buscar usuário pelo email ou ID \n");
         printf("5-Exibir todos os usuários cadastrados\n");
         printf("6-Realizar restauração de dados\n");
+        printf("7-Encerrar Programa!");
         scanf("%d",&escolha);
             switch (escolha)
             {
@@ -419,6 +484,8 @@ void encerrarprograma(){
             case 2: 
                 editarusuario();
                 break;
+            case 3:
+                excluirusuario();    
             case 6:
                 backup();    
             case 4:
@@ -430,7 +497,10 @@ void encerrarprograma(){
             default:
                 break;
             }
-                } while (escolha==1);
+        } while (escolha==1);
+        
+        
+               
         
         
     }
