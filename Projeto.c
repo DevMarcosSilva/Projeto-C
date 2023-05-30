@@ -5,7 +5,7 @@
 #include<locale.h>
    
 
-char email[1000][20],nome[100][50],sexo[1000][11],vacinacao[1000][11],endereco[1000][50],emailbackup[1000][20],sexobackup[1000][11],vacinacaobackup[1000][11],nomebackup[1000][50],enderecobackup[1000][50];
+char email[1000][20],nome[1000][50],sexo[1000][11],vacinacao[1000][11],endereco[1000][50],emailbackup[1000][20],sexobackup[1000][11],vacinacaobackup[1000][11],nomebackup[1000][50],enderecobackup[1000][50];
 
 float altura[1000];
 
@@ -117,7 +117,7 @@ double alturabackup[1000];
               break;
             }
         } while (busca==1 && busca == 2);
-        printf("Para retornar ao menu inicial digite 1!");
+            printf("Para retornar ao menu inicial digite 1!");
             scanf("%d",&escolhamenu); 
             switch (escolhamenu[i])
             {
@@ -266,7 +266,6 @@ double alturabackup[1000];
                 printf("E-mail:%s\n", email);
                 printf("Sexo:%s\n", sexo);
                 printf("Endereco:%s\n", endereco);
-                fflush(stdin);
                 printf("Altura:%.2f\n", altura[i]);
                 printf("Vacinação:%s\n", vacinacao);          
                } while (strchr(email[i], '@') == 0);
@@ -300,8 +299,7 @@ double alturabackup[1000];
                 printf("E-mail:%s\n", email);
                 printf("Sexo:%s\n", sexo);
                 printf("Endereco:%s\n", endereco);
-                fflush(stdin);
-                printf("Altura:%.2f\n", altura[i]);
+                printf("Altura:%.2f\n", altura);
                 printf("Vacinação:%s\n", vacinacao);
                 break;
                case 5:
@@ -316,8 +314,8 @@ double alturabackup[1000];
                 printf("E-mail:%s\n", email);
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
-                fflush(stdin);
-                printf("altura:%.2f\n", altura[i]);
+                
+                printf("altura:%.2f\n", altura);
                 printf("vacinação:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
@@ -335,8 +333,8 @@ double alturabackup[1000];
                 printf("E-mail:%s\n", email);
                 printf("Sexo:%s\n", sexo);
                 printf("endereco:%s\n", endereco);
-                fflush(stdin);
-                printf("altura:%.2f\n", altura[i]);
+                
+                printf("altura:%.2f\n", altura);
                 printf("vacinação:%s\n", vacinacao);
                 printf("nome:%s\n", nome);
                 
