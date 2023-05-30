@@ -241,7 +241,7 @@ double alturabackup[1000];
                 getchar();
                 printf("Insira o novo nome:");
                 fgets(nome,50,stdin);
-                printf("Novo nove inserido com sucesso!\n");
+                printf("Novo nome inserido com sucesso!\n");
                 
                 printf("nome:%s\n", nome);
                 printf("E-mail:%s\n", email);
