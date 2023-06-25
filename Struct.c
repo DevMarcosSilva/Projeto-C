@@ -118,7 +118,7 @@ void editarUsuario() {
     printf("Recebeu a vacina? (1 para sim, 0 para não): ");
     scanf("%d", &usuario->vacina);
 
-    getchar(); // Limpar o buffer do teclado
+    getchar(); 
 
     printf("Usuário editado com sucesso!\n");
 }
