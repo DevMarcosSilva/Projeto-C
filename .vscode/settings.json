@@ -1,5 +1,5 @@
 {
     "files.associations": {
-        "locale.h": "c"
+        "stdbool.h": "c"
     }
 }
